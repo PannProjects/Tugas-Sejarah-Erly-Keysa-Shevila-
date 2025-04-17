@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Pemerintahan Indonesia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #8C1C13;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #E2D4B7;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #E2D4B7;
+        }
+
+        .hero {
+            background-color: #BF4342;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        .article-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        .main-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #E2D4B7;
+            padding-bottom: 20px;
+        }
+
+        .article-header h2 {
+            font-size: 36px;
+            color: #8C1C13;
+            margin-bottom: 10px;
+        }
+
+        .article-metadata {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .article-section {
+            margin-bottom: 40px;
+        }
+
+        .article-section h3 {
+            font-size: 28px;
+            color: #590817;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #E2D4B7;
+        }
+
+        .article-section h4 {
+            font-size: 22px;
+            color: #590817;
+            margin: 20px 0 10px 0;
+        }
+
+        .article-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .article-section ul, .article-section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .article-section li {
+            margin-bottom: 8px;
+        }
+
+        .article-image {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+
+        .sidebar {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            align-self: start;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #E2D4B7;
+            color: #590817;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #E2D4B7;
+        }
+
+        .sidebar-nav li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-nav a {
+            color: #BF4342;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .sidebar-nav a:hover {
+            color: #8C1C13;
+        }
+
+        .sidebar-widget {
+            margin-top: 30px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .timeline-year {
+            min-width: 100px;
+            font-weight: bold;
+            color: #8C1C13;
+        }
+
+        .timeline-description {
+            color: #333;
+        }
+
+        .president-list {
+            margin-top: 30px;
+        }
+
+        .president-item {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+
+        .president-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #E2D4B7;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8C1C13;
+            font-weight: bold;
+        }
+
+        .president-info h4 {
+            margin: 0;
+            color: #590817;
+        }
+
+        .president-info p {
+            margin: 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        blockquote {
+            margin: 20px 0;
+            padding: 15px 20px 15px 50px;
+            background-color: #f9f5ec;
+            border-left: 5px solid #E2D4B7;
+            position: relative;
+            font-style: italic;
+        }
+
+        blockquote::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            color: #E2D4B7;
+            font-family: Georgia, serif;
+        }
+
+        .reference {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        footer {
+            background-color: #590817;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #BF4342;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #E2D4B7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #BF4342;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .article-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Sejarah<span>Indonesia</span></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Perjalanan Politik Indonesia</h1>
+            <p>Menelusuri sejarah pemerintahan Indonesia dari era Orde Lama hingga Reformasi: Dinamika politik, kebijakan, dan transformasi bangsa.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="article-container">
+            <div class="main-content">
+                <div class="article-header">
+                    <h2>Evolusi Pemerintahan Indonesia: Dari Orde Lama hingga Era Reformasi</h2>
+                    <div class="article-metadata">
+                        <span>Ditulis oleh: Kelompok 8 </span>
+                        <span>Terakhir Diperbarui: April 2025</span>
+                    </div>
+                </div>
+
+                <div class="article-section">
+                    <p>Sejarah pemerintahan Indonesia telah melewati berbagai fase penting sejak kemerdekaan pada 17 Agustus 1945. Perjalanan politik bangsa ini dibagi menjadi beberapa era signifikan yang masing-masing memiliki karakteristik, tantangan, dan pencapaian yang berbeda. Artikel ini akan mengupas secara mendalam tiga era utama pemerintahan Indonesia: Orde Lama (1945-1966), Orde Baru (1966-1998), dan Era Reformasi (1998-sekarang).</p>
+                </div>
+
+                <div class="article-section">
+                    <h3>I. Era Orde Lama (1945-1966)</h3>
+                    
+                    <h4>A. Masa Revolusi dan Perjuangan Mempertahankan Kemerdekaan (1945-1949)</h4>
+                    <p>Pasca proklamasi kemerdekaan, Indonesia menghadapi tantangan berat untuk mempertahankan kedaulatannya. Belanda berusaha kembali menjajah Indonesia melalui Agresi Militer I (1947) dan Agresi Militer II (1948). Kabinet pertama Indonesia dibentuk pada September 1945 dengan Sutan Sjahrir sebagai Perdana Menteri pertama.</p>
+                    
+                    <p>Periode ini ditandai dengan:</p>
+                    <ul>
+                        <li>Pembentukan sistem pemerintahan parlementer yang bertahan hingga 1959</li>
+                        <li>Perjuangan diplomatik melalui Perjanjian Linggarjati (1946) dan Perjanjian Renville (1948)</li>
+                        <li>Konferensi Meja Bundar (1949) yang menghasilkan pengakuan kedaulatan Indonesia oleh Belanda</li>
+                    </ul>
+
+                    <blockquote>
+                        "Proklamasi yang kita ucapkan pada tanggal 17 Agustus tahun 1945 bukanlah suatu hadiah atau pemberian dari Negara manapun melainkan hasil perjuangan Rakyat kita sendiri."
+                        <p class="reference">- Ir. Soekarno</p>
+                    </blockquote>
+
+                    <h4>B. Demokrasi Liberal (1950-1959)</h4>
+                    <p>Periode ini ditandai dengan instabilitas politik yang tinggi. Terjadi pergantian kabinet sebanyak tujuh kali dalam waktu sembilan tahun. Beberapa peristiwa penting pada masa ini:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Periode</th>
+                                <th>Kabinet</th>
+                                <th>Perdana Menteri</th>
+                                <th>Peristiwa Penting</th>
+                            </tr>
+                            <tr>
+                                <td>Jan 1950-Sep 1950</td>
+                                <td>Kabinet Hatta</td>
+                                <td>Mohammad Hatta</td>
+                                <td>Pembentukan RIS menjadi NKRI</td>
+                            </tr>
+                            <tr>
+                                <td>Sep 1950-Apr 1951</td>
+                                <td>Kabinet Natsir</td>
+                                <td>Mohammad Natsir</td>
+                                <td>Pembubaran RIS, Kembali ke NKRI</td>
+                            </tr>
+                            <tr>
+                                <td>Apr 1951-Apr 1952</td>
+                                <td>Kabinet Sukiman</td>
+                                <td>Sukiman Wirjosandjojo</td>
+                                <td>Penandatanganan MSA dengan AS</td>
+                            </tr>
+                            <tr>
+                                <td>Apr 1952-Jul 1953</td>
+                                <td>Kabinet Wilopo</td>
+                                <td>Wilopo</td>
+                                <td>Peristiwa 17 Oktober 1952</td>
+                            </tr>
+                            <tr>
+                                <td>Jul 1953-Agt 1955</td>
+                                <td>Kabinet Ali Sastroamidjojo I</td>
+                                <td>Ali Sastroamidjojo</td>
+                                <td>Konferensi Asia-Afrika 1955</td>
+                            </tr>
+                            <tr>
+                                <td>Agt 1955-Mar 1956</td>
+                                <td>Kabinet Burhanuddin Harahap</td>
+                                <td>Burhanuddin Harahap</td>
+                                <td>Pemilu pertama 1955</td>
+                            </tr>
+                            <tr>
+                                <td>Mar 1956-Apr 1957</td>
+                                <td>Kabinet Ali Sastroamidjojo II</td>
+                                <td>Ali Sastroamidjojo</td>
+                                <td>Konsepsi Presiden</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <p>Pemilihan umum pertama Indonesia diselenggarakan pada tahun 1955 untuk memilih anggota DPR dan Konstituante. Hasil pemilu ini menunjukkan empat partai besar yang mendominasi: PNI, Masyumi, NU, dan PKI.</p>
+
+                    <h4>C. Demokrasi Terpimpin (1959-1966)</h4>
+                    <p>Setelah mengalami instabilitas politik selama era Demokrasi Liberal, Presiden Soekarno mengeluarkan Dekrit Presiden 5 Juli 1959 yang membubarkan Konstituante dan kembali ke UUD 1945. Langkah ini menandai dimulainya era Demokrasi Terpimpin.</p>
+                    
+                    <p>Karakteristik utama Demokrasi Terpimpin:</p>
+                    <ul>
+                        <li>Kekuasaan terpusat di tangan Presiden Soekarno</li>
+                        <li>Pembentukan MPRS dan DPAS sebagai lembaga penasehat presiden</li>
+                        <li>Penerapan konsep NASAKOM (Nasionalisme, Agama, Komunisme)</li>
+                        <li>Politik luar negeri yang anti-imperialisme dan anti-neokolonialisme</li>
+                        <li>Pembentukan Kabinet Kerja yang tidak berbasis parlementer</li>
+                    </ul>
+
+                    <p>Kebijakan luar negeri pada era ini sangat menonjol dengan:</p>
+                    <ul>
+                        <li>Pembentukan Gerakan Non-Blok</li>
+                        <li>Konfrontasi dengan Malaysia (Ganyang Malaysia)</li>
+                        <li>Keluar dari PBB pada tahun 1965</li>
+                        <li>Pembentukan CONEFO (Conference of the New Emerging Forces) sebagai tandingan PBB</li>
+                    </ul>
+
+                    <p>Peristiwa besar yang menandai akhir dari era Orde Lama adalah Gerakan 30 September 1965 (G30S/PKI), yang menewaskan enam jenderal dan satu perwira menengah TNI AD. Kejadian ini diikuti dengan penerbitan Supersemar (Surat Perintah Sebelas Maret) pada tahun 1966, yang menjadi dasar peralihan kekuasaan dari Soekarno ke Soeharto.</p>
+                </div>
+
+                <div class="article-section">
+                    <h3>II. Era Orde Baru (1966-1998)</h3>
+                    
+                    <h4>A. Konsolidasi Kekuasaan (1966-1971)</h4>
+                    <p>Setelah menerima Supersemar pada 11 Maret 1966, Soeharto memulai langkah-langkah konsolidasi kekuasaan:</p>
+                    <ul>
+                        <li>Pembubaran PKI dan organisasi afiliasinya</li>
+                        <li>Pembersihan struktur pemerintahan dari unsur pendukung Orde Lama</li>
+                        <li>MPRS mencopot jabatan presiden Soekarno dan mengangkat Soeharto sebagai Pejabat Presiden pada Maret 1967</li>
+                        <li>Soeharto secara resmi diangkat sebagai Presiden pada 1968</li>
+                    </ul>
+
+                    <h4>B. Stabilitas Politik dan Pembangunan Ekonomi</h4>
+                    <p>Pemerintahan Orde Baru menerapkan kebijakan yang bertumpu pada tiga pilar utama:</p>
+                    <ol>
+                        <li><strong>Stabilitas politik</strong> - melalui penguatan peran militer dalam pemerintahan (Dwifungsi ABRI) dan penyederhanaan sistem kepartaian menjadi tiga partai: Golkar, PPP, dan PDI</li>
+                        <li><strong>Pembangunan ekonomi</strong> - dengan dukungan para teknokrat (Berkeley Mafia) yang mengadopsi model ekonomi kapitalis</li>
+                        <li><strong>Pengamanan</strong> - melalui pendekatan keamanan yang komprehensif</li>
+                    </ol>
+
+                    <p>Program pembangunan pada era Orde Baru dilaksanakan melalui:</p>
+                    <ul>
+                        <li>REPELITA (Rencana Pembangunan Lima Tahun) yang dimulai tahun 1969</li>
+                        <li>Swasembada beras yang tercapai pada tahun 1984</li>
+                        <li>Industrialisasi besar-besaran khususnya pada dekade 1980-an</li>
+                        <li>Program Keluarga Berencana untuk mengendalikan pertumbuhan penduduk</li>
+                    </ul>
+
+                    <h4>C. Karakteristik Pemerintahan Orde Baru</h4>
+                    <p>Beberapa ciri khas pemerintahan Orde Baru:</p>
+                    <ul>
+                        <li><strong>Sentralisasi kekuasaan</strong> - Kekuasaan terpusat pada eksekutif, khususnya presiden</li>
+                        <li><strong>Politik birokrasi</strong> - Birokrasi menjadi alat politik untuk mendukung kekuasaan</li>
+                        <li><strong>Pembatasan kebebasan politik</strong> - Kontrol ketat terhadap pers, kampus, dan aktivitas politik masyarakat</li>
+                        <li><strong>Korupsi, Kolusi, Nepotisme (KKN)</strong> - Praktik korupsi yang melembaga, terutama di kalangan keluarga presiden dan kroni-kroninya</li>
+                        <li><strong>Doktrin "floating mass"</strong> - Depolitisasi masyarakat di tingkat akar rumput</li>
+                    </ul>
+
+                    <p>Pada bidang politik luar negeri, Orde Baru mengambil kebijakan:</p>
+                    <ul>
+                        <li>Kembali menjadi anggota PBB pada 1966</li>
+                        <li>Menghentikan konfrontasi dengan Malaysia</li>
+                        <li>Memperkuat hubungan dengan negara-negara Barat dan Jepang</li>
+                        <li>Berperan aktif dalam pembentukan ASEAN pada 1967</li>
+                        <li>Kebijakan luar negeri bebas aktif dengan kecenderungan pro-Barat</li>
+                    </ul>
+
+                    <h4>D. Krisis dan Kejatuhan Orde Baru</h4>
+                    <p>Krisis ekonomi Asia yang dimulai pada pertengahan 1997 menjadi katalisator kejatuhan rezim Orde Baru. Nilai rupiah yang anjlok, inflasi tinggi, dan pengangguran massal memicu demonstrasi mahasiswa di berbagai kota. Peristiwa Tragedi Trisakti pada 12 Mei 1998, di mana empat mahasiswa Universitas Trisakti tertembak, menyulut demonstrasi besar-besaran dan kerusuhan di Jakarta dan kota-kota lain.</p>
+                    
+                    <p>Pada 21 Mei 1998, Presiden Soeharto akhirnya mengundurkan diri dan menyerahkan kekuasaan kepada Wakil Presiden B.J. Habibie. Kejatuhan Soeharto menandai berakhirnya era Orde Baru dan dimulainya Era Reformasi.</p>
+                </div>
+
+                <div class="article-section">
+                    <h3>III. Era Reformasi (1998-Sekarang)</h3>
+                    
+                    <h4>A. Pemerintahan Transisi B.J. Habibie (1998-1999)</h4>
+                    <p>B.J. Habibie menjadi presiden dalam situasi krisis multidimensi. Beberapa kebijakan penting yang dikeluarkan:</p>
+                    <ul>
+                        <li>Pembebasan tahanan politik</li>
+                        <li>Kebebasan pers dan penghapusan SIUPP (Surat Izin Usaha Penerbitan Pers)</li>
+                        <li>UU Otonomi Daerah yang memberikan desentralisasi kekuasaan</li>
+                        <li>Penyelenggaraan Pemilu demokratis pada 1999</li>
+                        <li>Referendum untuk Timor Timur yang berujung pada kemerdekaannya</li>
+                    </ul>
+
+                    <h4>B. Pemerintahan Abdurrahman Wahid (1999-2001)</h4>
+                    <p>Terpilih melalui Sidang Istimewa MPR, Abdurrahman Wahid (Gus Dur) menjadi presiden ke-4 Indonesia dengan Megawati Soekarnoputri sebagai wakil presiden. Beberapa kebijakan penting:</p>
+                    <ul>
+                        <li>Pemisahan TNI dan Polri</li>
+                        <li>Penghapusan Departemen Penerangan dan Departemen Sosial</li>
+                        <li>Pengakuan terhadap etnis Tionghoa dengan menjadikan Imlek sebagai hari libur nasional</li>
+                        <li>Penyelesaian konflik di Aceh melalui pendekatan dialog</li>
+                    </ul>
+                    
+                    <p>Gus Dur diberhentikan melalui Sidang Istimewa MPR pada 23 Juli 2001 setelah menghadapi konflik politik dengan DPR dan militer.</p>
+
+                    <h4>C. Pemerintahan Megawati Soekarnoputri (2001-2004)</h4>
+                    <p>Megawati naik menjadi presiden menggantikan Gus Dur. Beberapa pencapaian penting:</p>
+                    <ul>
+                        <li>Amandemen UUD 1945 yang menghasilkan lembaga-lembaga baru seperti MK, KY, dan DPD</li>
+                        <li>Pemulihan ekonomi pasca krisis</li>
+                        <li>Penanganan terorisme setelah Bom Bali 2002</li>
+                        <li>Negosiasi damai untuk Aceh pasca tsunami</li>
+                    </ul>
+
+                    <h4>D. Pemerintahan Susilo Bambang Yudhoyono (2004-2014)</h4>
+                    <p>SBY menjadi presiden pertama yang dipilih langsung oleh rakyat. Ia menjabat selama dua periode. Beberapa kebijakan penting:</p>
+                    <ul>
+                        <li>Penuntasan proses perdamaian Aceh dengan penandatanganan MoU Helsinki</li>
+                        <li>Pemberantasan korupsi melalui penguatan KPK</li>
+                        <li>Subsidi BBM dan program bantuan langsung tunai</li>
+                        <li>Pembangunan infrastruktur yang merata</li>
+                        <li>Kebijakan luar negeri dengan konsep "Thousand friends, zero enemy"</li>
+                    </ul>
+
+                    <h4>E. Pemerintahan Joko Widodo (2014-2024)</h4>
+                    <p>Joko Widodo (Jokowi) menjadi presiden dengan latar belakang non-militer dan non-partai politik besar. Beberapa fokus utama pemerintahannya:</p>
+                    <ul>
+                        <li>Pembangunan infrastruktur masif termasuk jalan tol, bandara, pelabuhan, dan bendungan</li>
+                        <li>Reformasi birokrasi dan pemberantasan korupsi</li>
+                        <li>Program kartu Indonesia Sehat, Pintar, dan Pra-kerja</li>
+                        <li>Pemindahan ibu kota negara dari Jakarta ke Kalimantan Timur</li>
+                        <li>Penanganan pandemi COVID-19 pada 2020-2022</li>
+                    </ul>
+
+                    <p>Jokowi menjabat selama dua periode hingga 2024.</p>
+                </div>
+                    
